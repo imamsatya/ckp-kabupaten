@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
+               
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -47,6 +49,10 @@
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
+
+                                      <label class="form-check-label" for="remember">
+                                      <a href="{{route('daftar_satker')}}">{{ __('Daftar Satker') }}</a>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -68,6 +74,25 @@
         </div>
     </div>
 </div>
+
+{{-- <div class="owl">
+  <div class="hand"></div>
+  <div class="hand hand-r"></div>
+  <div class="arms">
+    <div class="arm"></div>
+    <div class="arm arm-r"></div>
+  </div>
+</div>
+<div class="form">
+  <div class="control">
+    <label for="email" class="fa fa-envelope"></label>
+    <input id="email" placeholder="Email" type="email"></input>
+</div>
+<div class="control">
+  <label for="password" class="fa fa-asterisk"></label>
+  <input id="password" placeholder="Password" type="password"></input>
+</div>
+</div> --}}
 @endsection
  {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

@@ -9,6 +9,10 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+
+use App\Kodekab;
+
 class RegisterController extends Controller
 {
     /*
@@ -29,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -64,10 +68,43 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        dd($data);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function customRegister(Request $request){
+
+       
+        $email = 'bps' . $request['kode_satker']  . '@bps.go.id';
+        
+        
+        Kodekab::create([
+            'kode'=> $request['kode_satker'],
+            'email'=>$email
+            ]);
+
+            $id_kodekab = Kodekab::where('kode', $request['kode_satker'])->get();
+        // dd($id_kodekab[0]['id']);    
+        
+        
+            User::create([
+            'name' => $request['nama_satker'],
+            'email' => $email,
+            'password' => Hash::make($request['password']),
+            'is_admin' => true,
+            'kodekab_id' => $id_kodekab[0]['id']
+        ]);
+
+       
+         
+        
+
+        return view('auth.daftar_satker');
+
     }
 }

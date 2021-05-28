@@ -20,6 +20,7 @@ class JabatansTableSeeder extends Seeder
         // 4 kabid
         // 5 kasie
         // 6 staf
+        //7 KSK
       DB::table('jabatans')->insert([
         [
             'jabatan_kantor'  => 'Kepala BPS Provinsi',
@@ -248,6 +249,64 @@ class JabatansTableSeeder extends Seeder
         //     'jabatan_kantor'  => 'Staf Seksi Integrasi Pengolahan Data',
         //     'role' => '6', 
         // ]
+
+
+
+        //Kabupaten
+         [
+            'jabatan_kantor'  => 'Kepala Subbagian Tata Usaha',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Kepala Seksi Statistik Sosial',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Kepala Seksi Statistik Produksi',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Kepala Seksi Statistik Distribusi',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Kepala Seksi Neraca Wilayah dan Analisis Statistik',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Kepala Seksi Integrasi Pengolahan dan Diseminasi Statistik',
+            'role' => '5',
+        ],
+         [
+            'jabatan_kantor'  => 'KSK',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Subbagian Tata Usaha',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Seksi Statistik Sosial',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Seksi Statistik Produksi',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Seksi Statistik Distribusi',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Seksi Neraca Wilayah dan Analisis Statistik',
+            'role' => '5',
+        ],
+        [
+            'jabatan_kantor'  => 'Staf Seksi Integrasi Pengolahan dan Diseminasi Statistik',
+            'role' => '5',
+        ],
+         
+        
     ]);
     }
 }
