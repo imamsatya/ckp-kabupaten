@@ -83,7 +83,11 @@ class LoginController extends Controller
             //     return redirect()->route('kepalabps.home');
 
             // }
-            if($user->jabatan->role != 6 ){
+
+            if($user->is_admin == true){
+                return redirect()->route('admin.home');
+            }else{
+                    if($user->jabatan->role != 6 ){
 
                 return redirect()->route('home');
 
@@ -93,6 +97,8 @@ class LoginController extends Controller
                 return redirect()->route('home');
 
             }
+            }
+        
             // elseif(auth()->user()->jabatan_id == range (29, 48)){
 
             //     return redirect()->route('home');

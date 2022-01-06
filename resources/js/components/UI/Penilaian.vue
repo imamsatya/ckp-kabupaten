@@ -291,8 +291,13 @@
                                         </v-list-item-content>
 
                                     </v-col>
+<<<<<<< HEAD
                                     <v-col cols="12" sm="6" style="color: #b9bbc1;">
                                         <v-text-field dark v-model="item.kualitas" label="Kualitas X" type="number" :rules="rules"  min=0 max=100>
+=======
+                                    <v-col cols="12" sm="6">
+                                        <v-text-field v-model="item.kualitas" label="Kualitas X" type="number" :rules="rules"  min=0 max=100>
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                         </v-text-field>
 
                                        

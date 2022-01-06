@@ -43,6 +43,12 @@ class CreateUsersTable extends Migration
             $table->foreign('jabatan_id')->references('id')->on('jabatans');
             
         });
+
+         Schema::table('users', function (Blueprint $table){
+            $table->integer('kodekab_id')->unsigned()->nullable();
+            $table->foreign('kodekab_id')->references('id')->on('kodekabs');
+            
+        });
     }
 
     /**

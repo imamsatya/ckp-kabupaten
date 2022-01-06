@@ -1,13 +1,22 @@
 <template>
     <div>
         <v-container>
+<<<<<<< HEAD
             <v-card style="background-color: #283046;" elevation=8 class=" pa-md-4 mx-lg-auto">
                 <v-select dark style="color:white;" :items="pilihan_bulan" label="Bulan" v-model="bulan" @input="pilihBulan(bulan)"></v-select>
+=======
+            <v-card elevation=8 class=" pa-md-4 mx-lg-auto">
+                <v-select :items="pilihan_bulan" label="Bulan" v-model="bulan" @input="pilihBulan(bulan)"></v-select>
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
             </v-card>
         </v-container>
 
         <v-container>
+<<<<<<< HEAD
             <v-card style="background-color: #283046; "  elevation=8 class="rounded-card pa-md-4 mx-lg-auto">
+=======
+            <v-card  elevation=8 class="rounded-card pa-md-4 mx-lg-auto">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                 
                 <v-card-title style="color: white" class="">
                         <v-icon large style="color: #7367f0">mdi-clipboard-text</v-icon>  Form CKP
@@ -16,12 +25,21 @@
                 </v-card-title>
                 <v-row>
                   <!-- {{this.user.jabatan_id}} -->
+<<<<<<< HEAD
                     <v-col cols="12" md="6" style="color: white;">
                         <v-select dark  v-model="jenis_bidang" :items="bidang" :error-messages="jenis_bidangErrors"
                             label="Kegiatan Fungsi *" required @change="$v.jenis_bidang.$touch()"
                             @blur="$v.jenis_bidang.$touch()"></v-select>
 
                         <v-select dark v-model="jenis_kegiatan" :items="items" :error-messages="jenis_kegiatanErrors"
+=======
+                    <v-col cols="12" md="6">
+                        <v-select v-if="this.user.jabatan_id == 2" v-model="jenis_bidang" :items="bidang" :error-messages="jenis_bidangErrors"
+                            label="Kegiatan Bidang *" required @change="$v.jenis_bidang.$touch()"
+                            @blur="$v.jenis_bidang.$touch()"></v-select>
+
+                        <v-select v-model="jenis_kegiatan" :items="items" :error-messages="jenis_kegiatanErrors"
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                             label="Jenis Kegiatan *" required @change="$v.jenis_kegiatan.$touch()"
                             @blur="$v.jenis_kegiatan.$touch()"></v-select>
 
@@ -29,7 +47,11 @@
                             label="Uraian Kegiatan *" required @input="$v.uraian_kegiatan.$touch()"
                             @blur="$v.uraian_kegiatan.$touch()"  autocomplete="on">></v-text-field>
 
+<<<<<<< HEAD
                         <v-text-field dark v-model="satuan" :error-messages="satuanErrors" label="Satuan *" cache-items autocomplete="on" required
+=======
+                        <v-text-field v-model="satuan" :error-messages="satuanErrors" label="Satuan *" cache-items autocomplete="on" required
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                             @input="$v.satuan.$touch()" @blur="$v.satuan.$touch()"></v-text-field>
 
                         <v-text-field dark v-model="target_kuantitas" :error-messages="target_kuantitasErrors"
@@ -60,7 +82,11 @@
                          <v-icon left>mdi-eraser</v-icon>
                          clear
                     </v-btn>
+<<<<<<< HEAD
                     <v-btn :disabled="disable" class="mr-4" style="background-color: #7367f0; color:white;" tile  @click="submit">
+=======
+                    <v-btn :disabled="disable" class="mr-4" color="primary" tile outlined @click="submit">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                          <v-icon left>mdi-send</v-icon>submit</v-btn>
                 </v-row>
                 <br>
@@ -74,7 +100,11 @@
 
         <v-container fluid>
 
+<<<<<<< HEAD
             <v-card style="background-color: #283046; font-color: white;" class="pa-md-4 mx-lg-auto raised " elevation=8>
+=======
+            <v-card class="pa-md-4 mx-lg-auto raised " elevation=8>
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                 <v-row dense>
 
 
@@ -98,13 +128,21 @@
                         </v-card-subtitle> -->
                         <v-card-title>
 
+<<<<<<< HEAD
                             <v-btn :disabled="disable" small class="ma-2" tile  style="background-color: #7367f0;color: white;" @click="realisasiDialog()">
+=======
+                            <v-btn :disabled="disable" small class="ma-2" tile outlined color="primary" @click="realisasiDialog()">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                 <v-icon left>mdi-pencil</v-icon> Realisasi
                             </v-btn>
                             <v-btn small class="ma-2" tile style="background-color: #28c76f;color: white;"  @click="downloadExcel()">
                                 <v-icon left>mdi-file-excel</v-icon> Download Excel
                             </v-btn>
+<<<<<<< HEAD
                             <v-btn :disabled="disable" small class="ma-2" tile style="background-color: #7367f0;color: white;"  @click="copyCkp()">
+=======
+                            <v-btn :disabled="disable" small class="ma-2" tile outlined color="primary" @click="copyCkp()">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                 <v-icon left>mdi-content-copy</v-icon> Copy ?
                             </v-btn>
                             <v-spacer></v-spacer>
@@ -129,10 +167,17 @@
     >
      Yeay, Copy Berhasil :)
     </v-alert>
+<<<<<<< HEAD
                         <v-data-table dark style="background-color: #161d31; color: white;" :headers="headers" :items="ckpt_view" class="elevation-1" :search="search">
                             <template style="color:white;" v-slot:item.aksi="{ item }">
                                 <div v-if="disable==false">
                                 <v-btn  style="background-color: #7367f0;color: white;" fab x-small dark @click="editDialog(item)">
+=======
+                        <v-data-table :headers="headers" :items="ckpt_view" class="elevation-1" :search="search">
+                            <template v-slot:item.aksi="{ item }">
+                                <div v-if="disable==false">
+                                <v-btn  color="primary" fab x-small dark @click="editDialog(item)">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                     <v-icon small @click="editDialog(item)">mdi-pencil</v-icon>
                                 </v-btn>
 
@@ -249,11 +294,19 @@
 
                             <v-col cols="12" sm="6">
 
+<<<<<<< HEAD
                                 <v-select dark v-if="this.user.jabatan_id == 2" v-model="edited_jenis_bidang" :items="bidang" :error-messages="edited_jenis_bidangErrors"
                             label="Kegiatan Bidang *" required @change="$v.edited_jenis_bidang.$touch()"
                             @blur="$v.edited_jenis_bidang.$touch()"></v-select>
 
                                 <v-select dark v-model="edited_jenis_kegiatan" :items="items"
+=======
+                                <v-select v-if="this.user.jabatan_id == 2" v-model="edited_jenis_bidang" :items="bidang" :error-messages="edited_jenis_bidangErrors"
+                            label="Kegiatan Bidang *" required @change="$v.edited_jenis_bidang.$touch()"
+                            @blur="$v.edited_jenis_bidang.$touch()"></v-select>
+
+                                <v-select v-model="edited_jenis_kegiatan" :items="items"
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                     :error-messages="edited_jenis_kegiatanErrors" label="Jenis Kegiatan *" required
                                     @change="$v.edited_jenis_kegiatan.$touch()"
                                     @blur="$v.edited_jenis_kegiatan.$touch()" ></v-select>
@@ -360,6 +413,7 @@
                                             @input="$v.edited_target_kuantitas.$touch()"
                                             @blur="$v.edited_target_kuantitas.$touch()"></v-text-field> -->
                                     </v-col>
+<<<<<<< HEAD
                                     <v-col cols="12" sm="6" style="color: #b9bbc1;">
                                          <v-list-item-content>
                                             <v-list-item-title>Persentase</v-list-item-title>
@@ -367,6 +421,15 @@
                                         </v-list-item-content>
 
                                         <v-text-field dark v-model="item.realisasi" label="Realisasi">
+=======
+                                    <v-col cols="12" sm="6">
+                                         <v-list-item-content>
+                                            <v-list-item-title>Persentase</v-list-item-title>
+                                            <v-list-item-subtitle>{{persentase(item)}}</v-list-item-subtitle>
+                                        </v-list-item-content>
+
+                                        <v-text-field v-model="item.realisasi" label="Realisasi">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                         </v-text-field>
 
 
@@ -419,22 +482,37 @@
 
          <v-dialog v-model="alertTtd" max-width="290">
             
+<<<<<<< HEAD
             <v-card color="#161d31">
                 <v-container>
                 <v-card-title class="headline" style="color: white;">Pengumuman</v-card-title>
                 <div style="color: white;">
                 Halo semuanya, jangan lupa untuk upload scan tanda tangan dengan format .png di menu settings. Terima kasih, selamat beraktivitas :)
                 </div>
+=======
+            <v-card>
+                <v-container>
+                <v-card-title class="headline">Pengumuman</v-card-title>
+                Halo semuanya, jangan lupa untuk upload scan tanda tangan dengan format .png di menu settings. Terima kasih, selamat beraktivitas :)
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                <!-- <v-select :items="daftar_bulan_view" label="Bulan" v-model="bulan_copy" @input="pilihBulan(bulan_copy)"></v-select> -->
 
                 <v-card-actions>
                     <v-spacer></v-spacer>
 
+<<<<<<< HEAD
                     <v-btn style="background-color: #ea5455;color:white;" text @click="alertTtd = false">
                         Close
                     </v-btn> 
 
                     <v-btn style="background-color: #28c76f;color: white;" text @click="goTo()">
+=======
+                    <v-btn color="red darken-1" text @click="alertTtd = false">
+                        Close
+                    </v-btn> 
+
+                    <v-btn color="green darken-1" text @click="goTo()">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                         Settings
                     </v-btn>
                 </v-card-actions>
@@ -1092,8 +1170,16 @@
 
                     
                     
+<<<<<<< HEAD
                     this.uraian_kegiatan_x = this.jenis_bidang+ ' - '+this.uraian_kegiatan
                     
+=======
+                    if (this.user.jabatan_id == 2) {
+                        this.uraian_kegiatan_x = this.jenis_bidang+ ' - '+this.uraian_kegiatan
+                    }else{
+                        this.uraian_kegiatan_x = this.uraian_kegiatan
+                    }
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
 
                     this.satuan_x = this.satuan
                     this.target_kuantitas_x = this.target_kuantitas

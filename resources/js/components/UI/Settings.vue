@@ -51,6 +51,7 @@
 
     
 
+<<<<<<< HEAD
     </v-col>
 
     <v-col cols="12" md="6">
@@ -128,6 +129,85 @@
     
 
     </v-col>
+=======
+    </v-col>
+
+    <v-col cols="12" md="6">
+        <v-card class="mx-auto" max-width="400">
+            <v-card-title>
+                <v-icon large left>
+                    mdi-feather
+                </v-icon>
+                <span class="title ">Upload Tanda Tangan</span>
+            </v-card-title>
+
+             <v-card-text>
+                                <!-- <v-form >
+                                    <input  label="Regular" type="file" v-on:change="onFileChange">
+                                    <v-text-field label="Regular" type="file" v-on:change="onImageChange"></v-text-field>
+                                    <q-input @input="val => { file = val[0] }" filled type="file" hint="File Scan" @change="uploadFile" />
+                                </v-form> -->
+
+                                <form @submit="formSubmit" enctype="multipart/form-data">
+                                    
+                                    <!-- <strong>Name:</strong>
+
+                        <input type="text" class="form-control" v-model="name"> -->
+
+                                    <strong>File:</strong>
+
+                                    <input type="file" class="form-control" @change="onFileChange">
+
+
+
+                                    <!-- <button class="btn btn-success">Submit</button> -->
+                                     <v-card-actions>
+                                <v-spacer />
+                                <v-btn color="primary" @click="formSubmit">Proses</v-btn>
+                            </v-card-actions>
+                                </form>
+                            </v-card-text>
+
+            <!-- <v-row justify="center">
+                <br><br><br><br>
+
+                <v-btn class="mr-4" color="red darken-1" tile outlined @click="clear">
+                    <v-icon left>mdi-eraser</v-icon>
+                    clear
+                </v-btn>
+                <v-btn class="mr-4" color="primary" tile outlined >
+                    <v-icon left>mdi-send</v-icon>submit
+                </v-btn>
+            </v-row> -->
+            <!--     -->
+
+        </v-card>
+
+        <v-snackbar  v-model="snackbar"   :timeout="timeout" :color="snackbar_color" top>
+      {{ text }}
+      <v-btn
+        color="white"
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
+    <v-snackbar  v-model="snackbar2"   :timeout="timeout" color="primary" top>
+      <p>Upload tanda tangan berhasil</p>
+      <v-btn
+        color="white"
+        text
+        @click="snackbar2 = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
+
+    
+
+    </v-col>
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
 </v-row>
     
 </template>

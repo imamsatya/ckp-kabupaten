@@ -43,6 +43,9 @@ import { store } from './store/store'
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 Vue.component('s-layout', require('./components/UI/SLayout.vue').default);
+
+Vue.component('s-admin', require('./components/UI/Admin.vue').default);
+
 Vue.component('s-ckp', require('./components/UI/CKP.vue').default);
 Vue.component('s-ckpbulan', require('./components/UI/CKPbulan.vue').default);
 Vue.component('s-ckpratarata', require('./components/UI/CKPRatarata.vue').default);

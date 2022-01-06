@@ -5,8 +5,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+<<<<<<< HEAD
             <div class="card" style="background-color: #7367f0">
                 <div class="card-header " style="color: white; font-weight: bold;">{{ __('Login') }}</div>
+=======
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
+               
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
 
                 <div class="card-body" style="background-color: #283046; color: white;">
                     <form method="POST" action="{{ route('login') }}">
@@ -47,6 +53,10 @@
 
                                     <label class="form-check-label" for="remember" style="color: white;">
                                         {{ __('Remember Me') }}
+                                    </label>
+
+                                      <label class="form-check-label" for="remember">
+                                      <a href="{{route('daftar_satker')}}">{{ __('Daftar Satker') }}</a>
                                     </label>
                                 </div>
                             </div>

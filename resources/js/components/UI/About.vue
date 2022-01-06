@@ -51,12 +51,20 @@
 
   <v-card
     class="mx-auto"
+<<<<<<< HEAD
     color="#283046"
+=======
+    color="white"
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
     
     max-width="400"
   >
 
+<<<<<<< HEAD
   <v-btn small class="ma-2" tile outlined color="#7367f0" href="/download/panduan">
+=======
+  <v-btn small class="ma-2" tile outlined color="info" href="/download/panduan">
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
                                 <v-icon left>mdi-book</v-icon> Panduan
     </v-btn>
   </v-card>

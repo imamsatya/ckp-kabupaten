@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,12 +16,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('auth.login');
-});
+})->name('login_custom');
+
+Route::get('/daftar_satker', function(){
+    return view ('auth.daftar_satker');
+})->name('daftar_satker');
+
+// Route::post('/register_custom', function(Request $request){
+//     dd($request);
+//     return view ('auth.daftar_satker');
+// })->name('register_custom');
+
+Route::post('/register_custom', 'Auth\RegisterController@customRegister')->name('register_custom');
 
 Auth::routes();
 
 //admin
-Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+// Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
+Route::get('admin/home', 'AdminController@index')->name('admin.home');
+Route::get('/admin/getjabatan', 'AdminController@getJabatan')->name('admin.getjabatan');
+Route::post('admin/adduser', 'AdminController@storeuser')->name('admin.adduser');
+
+Route::post('/admin/importuser', 'AdminController@imoprtUser')->name('importUser');
 
 //kasie
 Route::get('/kasie/home', 'KasieController@index')->name('kasie.home');

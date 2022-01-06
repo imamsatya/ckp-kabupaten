@@ -102,8 +102,8 @@ class HomeController extends Controller
         $ckpt->kode_butir_kegiatan = $request->input('edited_ckp')[0]['kode_butir_kegiatan'];
         $ckpt->angka_kredit = $request->input('edited_ckp')[0]['angka_kredit'];
         $ckpt->keterangan = $request->input('edited_ckp')[0]['keterangan'];
-         $ckpt->save();
-        
+        $ckpt->save();
+
     }
 
     public function get_ckp( $bulan){
@@ -169,9 +169,159 @@ class HomeController extends Controller
             $penilai = $penilai->where('jabatan_id', 1)->get();
             break;
 
+<<<<<<< HEAD
             case 'KSK':
                 $penilai = $penilai->where('jabatan_id', 1)->get();
                 break;
+=======
+           
+            //Kepala BPS Prov
+            //=================================Kasie===================================
+            //TU
+            case 'Kepala Subbagian Bina Program':
+            $penilai = $penilai->where('jabatan_id', 3)->get();
+            break;
+
+            case 'Kepala Subbagian Kepegawaian dan Hukum':
+            $penilai = $penilai->where('jabatan_id', 3)->get();
+            break;
+            
+            case 'Kepala Subbagian Bina Keuangan':
+            $penilai = $penilai->where('jabatan_id', 3)->get();
+            break;
+
+            case 'Kepala Subbagian Umum':
+            $penilai = $penilai->where('jabatan_id', 3)->get();
+            break;
+
+            case 'Kepala Subbagian Pengadaan Barang/Jasa':
+            $penilai = $penilai->where('jabatan_id', 3)->get();
+            break;
+
+            //Sosial
+            case 'Kepala Seksi Statistik Kependudukan':
+            $penilai = $penilai->where('jabatan_id', 4)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Ketahanan Sosial':
+            $penilai = $penilai->where('jabatan_id', 4)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Kesejahteraan Rakyat':
+            $penilai = $penilai->where('jabatan_id', 4)->get();
+            break;
+
+            //Produksi
+            case 'Kepala Seksi Statistik Pertanian':
+            $penilai = $penilai->where('jabatan_id', 5)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Industri':
+            $penilai = $penilai->where('jabatan_id', 5)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Pertambangan, Energi dan Konstruksi':
+            $penilai = $penilai->where('jabatan_id', 5)->get();
+            break;
+
+
+            //Distribusi
+            case 'Kepala Seksi Statistik Harga Konsumen dan Harga Perdagangan Besar':
+            $penilai = $penilai->where('jabatan_id', 6)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Keuangan Dan Harga Produsen':
+            $penilai = $penilai->where('jabatan_id', 6)->get();
+            break;
+
+            case 'Kepala Seksi Statistik Niaga dan Jasa':
+            $penilai = $penilai->where('jabatan_id', 6)->get();
+            break;
+
+            //Neraca
+            case 'Kepala Seksi Neraca Produksi':
+            $penilai = $penilai->where('jabatan_id', 7)->get();
+            break;
+
+            case 'Kepala Seksi Neraca Konsumsi':
+            $penilai = $penilai->where('jabatan_id', 7)->get();
+            break;
+
+            case 'Kepala Seksi Analisis Statistik Lintas Sektor ':
+            $penilai = $penilai->where('jabatan_id', 7)->get();
+            break;
+
+
+
+            //IPDS
+            case ('Kepala Seksi Integrasi Pengolahan Data'):
+            $penilai = $penilai->where('jabatan_id', 8)->get();
+            break;
+            case ('Kepala Seksi Jaringan dan Rujukan Statistik'):
+            $penilai = $penilai->where('jabatan_id', 8)->get();
+            break;
+            case ('Kepala Seksi Diseminasi dan Layanan Statistik'):
+            $penilai = $penilai->where('jabatan_id', 8)->get();
+            break;
+
+
+            //IPDS
+            // case 'Kepala Seksi Integrasi Pengolahan Data'OR 'Kepala Seksi Jaringan dan Rujukan Statistik'OR 'Kepala Seksi Diseminasi dan Layanan Statistik':
+            // $penilai = $penilai->where('jabatan_id', 8)->get();
+            // break;
+            //=================================Staff===================================
+            //kasie TU
+            case 'Staf Subbagian Bina Program':
+            $penilai = $penilai->where('jabatan_id', 9)->get();
+            break;
+
+            case 'Staf Subbagian Kepegawaian dan Hukum':
+            // $penilai = $penilai->where('jabatan_id', 10)->get();    
+            $penilai = $penilai->where('jabatan_id', 3)->get();    
+            break;
+
+            case 'Staf Subbagian Bina Keuangan':
+            $penilai = $penilai->where('jabatan_id', 11)->get();
+            break;
+
+            case 'Staf Subbagian Umum':
+            $penilai = $penilai->where('jabatan_id', 12)->get();
+            break;
+
+            case 'Staf Subbagian Pengadaan Barang/Jasa':
+            $penilai = $penilai->where('jabatan_id', 13)->get();
+            break;
+
+            //kasie Sosial
+            case 'Staf Seksi Statistik Kependudukan':
+            $penilai = $penilai->where('jabatan_id', 14)->get();
+            break;
+
+            case 'Staf Seksi Statistik Ketahanan Sosial':
+            $penilai = $penilai->where('jabatan_id', 15)->get();
+            break;
+
+            case 'Staf Seksi Statistik Ketahanan Sosial':
+            $penilai = $penilai->where('jabatan_id', 16)->get();
+            break;
+            //kasie Produksi
+            case 'Staf Seksi Statistik Pertanian':
+            $penilai = $penilai->where('jabatan_id', 17)->get();
+            break;
+
+            case 'Staf Seksi Statistik Industri':
+            $penilai = $penilai->where('jabatan_id', 18)->get();
+            break;
+
+            case 'Staf Seksi Statistik Pertambangan dan Energi':
+            $penilai = $penilai->where('jabatan_id', 19)->get();
+            break;
+
+            //kasie Neraca
+            case 'Staf Seksi Neraca Produksi':
+            $penilai = $penilai->where('jabatan_id', 23)->get();
+            break;
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
 
                 case 'Staf Subbagian Tata Usaha':
                     $penilai = $penilai->where('jabatan_id', 2)->get();
@@ -217,7 +367,11 @@ class HomeController extends Controller
 
         //Identitas
         // dd($penilai);
+<<<<<<< HEAD
         $worksheet->getCell('C4')->setValue(': BPS Kota Palu');
+=======
+        $worksheet->getCell('C4')->setValue(': BPS Provinsi Sulawesi Tengah');
+>>>>>>> c34172125b55ff373a028a387501f24c2f0a07b6
         $worksheet->getCell('C5')->setValue(': '.$user->name);
         $worksheet->getCell('C6')->setValue(': '.$user->jabatan->jabatan_kantor);
         $worksheet->getCell('C7')->setValue(': '.$request->ckp[0]['bulan']);
@@ -578,8 +732,8 @@ class HomeController extends Controller
         // dd($request);
         // dd($request->input('ckpt')['id']);
        
-        $ckpt = new Ckp;
-        $ckpt = $ckpt->where('id', $request)->delete();
+            $ckpt = new Ckp;
+            $ckpt = $ckpt->where('id', $request)->delete();
     }
 
     //ckp bulanan
