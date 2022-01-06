@@ -35,129 +35,45 @@ class KasieController extends Controller
         //kasie Neraca
         switch ($user->jabatan->jabatan_kantor) {
             //Kepala BPS Prov
-            case 'Kepala BPS Provinsi':
+            case 'Kepala BPS Kabupaten':
             $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,3,4,5,6,7,8])->get();
             break;
 
             //kabid TU
-            case 'Kepala Bagian Tata Usaha':
+            case 'Kepala Subbagian Tata Usaha':
                 //$daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,9,10,11,12,13])->get();
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,9,10,11,12,13, 30,52,29,30,31,32,33])->get();
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [9])->get();
             break;
                         
             //kabid Sosial
-            case 'Kepala Bidang Statistik Sosial':
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,14,15,16,49,34,35,36])->get();
+            case 'Kepala Seksi Statistik Sosial':
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [10])->get();
             break;
 
             //kabid Produksi
-            case 'Kepala Bidang Statistik Produksi':
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,17,18,19,51,37,38,39])->get();
+            case 'Kepala Seksi Statistik Produksi':
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [11])->get();
             break;
 
             //kabid Distribusi
-            case 'Kepala Bidang Statistik Distribusi':
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,20,21,22,50, 42,40,41])->get();
+            case 'Kepala Seksi Statistik Distribusi':
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [12])->get();
             break;
 
             //kabid Neraca
             case 'Kepala Bidang Neraca Wilayah dan Analisis Statistik':
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,23,24,25,43,44,45])->get();
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [13])->get();
             break;
 
             //kabid IPDS
             case 'Kepala Bidang Statistik Integrasi Pengolahan dan Diseminasi Statistik':
-            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [2,26,27,28,46,47,48])->get();
+            $daftar_pegawai = $daftar_pegawai->whereIn('jabatan_id', [14])->get();
             break;
 
             //=============================================//
             //=============================================//
 
-            //kasie TU
-            case 'Kepala Subbagian Bina Program':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 29)->get();
-            break;
-
-            case 'Kepala Subbagian Kepegawaian dan Hukum':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 30)->get();
-            break;
-
-            case 'Kepala Subbagian Bina Keuangan':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 31)->get();
-            break;
-
-            case 'Kepala Subbagian Umum':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 32)->get();
-            break;
-
-            case 'Kepala Subbagian Pengadaan Barang/Jasa':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 33)->get();
-            break;
-
-            //kasie Sosial
-            case 'Kepala Seksi Statistik Kependudukan':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 34)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Ketahanan Sosial':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 35)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Kesejahteraan Rakyat':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 36)->get();
-            break;
-            //kasie Produksi
-            case 'Kepala Seksi Statistik Pertanian':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 37)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Industri':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 38)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Pertambangan dan Energi':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 39)->get();
-            break;
-
-            //kasie Neraca
-            case 'Kepala Seksi Neraca Produksi':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 43)->get();
-            break;
-
-            case 'Kepala Seksi Neraca Konsumsi':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 44)->get();
-            break;
-            
-            case 'Kepala Seksi Analisis Statistik Lintas Sektor':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 45)->get();
-            break;
-
-            //kasie Distribusi
-            case 'Kepala Seksi Statistik Harga Konsumen dan Harga Perdagangan Besar':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 40)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Keuangan Dan Harga Produsen':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 41)->get();
-            break;
-
-            case 'Kepala Seksi Statistik Niaga dan Jasa':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 42)->get();
-            break;
-
-            //Kasie IPDS
-            case 'Kepala Seksi Integrasi Pengolahan Data':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 46)->get();
-            break;
-
-            case 'Kepala Seksi Jaringan dan Rujukan Statistik':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 47)->get();
-            break;
-
-            case 'Kepala Seksi Diseminasi dan Layanan Statistik':
-            $daftar_pegawai = $daftar_pegawai->where('jabatan_id', 48)->get();
-            break;
-
+          
             
             default:
                 # code...
